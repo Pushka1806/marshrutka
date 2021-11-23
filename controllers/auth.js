@@ -7,7 +7,7 @@ module.exports.login = async function (req, res){
     const candidate = await User.findOne({"_id.login": req.body.login})
     if(candidate){
         //нашли - проверяем пароль
-        concole.log("Пароль", candidate._id.password);
+        concole.log("Пароль", candidate.quanPassengers);
         const passwordResult = bcrypt.compareSync(req.body.password, candidate._id.password);
         if(passwordResult){
             //гененируем токен, т.к. пароль правильный
