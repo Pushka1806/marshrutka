@@ -16,19 +16,34 @@ module.exports.login = async function (req, res){
             //    login: candidate.login,
             //    userid: candidate._id
             //}, keys.jwt, {expiresIn: 60 * 60})
-            res.status(200).json({
+            if(candidate.flag == 0){
+                candidate.flag = 1;
+                res.status(200).json({
+                message: "Введите новый пароль"
+                })
+            }
+            else if(candidate.flag == 1){
+                candidate.flag = 2;
+                res.status(200).json({
                 message: "OK"
                 })
-        }else{
+            }
+            else{    
+                res.status(200).json({
+                    message: "OK"
+                })
+            }
+        }
+        else{
             //пароли не совпали
             res.status(401).json({
-                message: candidate._id.login
+                message: "Неверный пароль"
             })
         }
     } else{
         //если не нашли пользователя
         res.status(404).json({
-            message: "No"
+            message: "Пользователь не найден"
         })
     }
 }
