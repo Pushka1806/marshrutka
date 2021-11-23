@@ -4,24 +4,23 @@ const User = require('../models/User_driver')
 const keys = require("../config/keys");
 
 module.exports.login = async function (req, res){
-    //const candidate = await User.findOne({login: req.body.login})
-    const candidate = await User.findOne({})
-    res.status(401).json({
-                message: candidate
-            })
+    const candidate = await User.findOne({_id.login: req.body.login, _id.password: req.body.password})
     if(candidate){
         //нашли - проверяем пароль
-        const passwordResult = bcrypt.compareSync(req.body.password, candidate.password);
-        if(passwordResult){
+        //const passwordResult = bcrypt.compareSync(req.body.password, candidate.password);
+        //if(passwordResult){
             //гененируем токен, т.к. пароль правильный
-            const token = jsonwebtoken.sign({
-                login: candidate.login,
-                userid: candidate._id
-            }, keys.jwt, {expiresIn: 60 * 60});
+            //const token = jsonwebtoken.sign({
+            //    login: candidate.login,
+            //    userid: candidate._id
+            //}, keys.jwt, {expiresIn: 60 * 60});
 
-            res.status(200).json({
-                token: `Bearer ${token}`
-            })
+            //res.status(200).json({
+            //    token: `Bearer ${token}`
+            //})
+         res.status(200).json({
+             message: "OK"
+           })
         } else{
             //пароли не совпали
             res.status(401).json({
