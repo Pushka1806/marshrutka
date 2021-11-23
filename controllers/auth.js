@@ -4,7 +4,7 @@ const User = require('../models/User_driver')
 const keys = require("../config/keys");
 
 module.exports.login = async function (req, res){
-    const candidate = await User.findOne({_id.login: req.body.login})
+    const candidate = await User.findOne({"_id.login": req.body.login})
     if(candidate){
         //нашли - проверяем пароль
         const passwordResult = bcrypt.compareSync(req.body.password, candidate.password);
