@@ -6,5 +6,5 @@ router.get('/getAll', controller.getAll);
 router.get('/getStopByName', controller.getAvailableStops);
 router.get('/getRoutesByStops', controller.getRoutesByStops);
 router.get('/getRoute', controller.getRoutes);
-router.get('/getRouteById', controller.getRouteById)
+router.get('/getRouteById', controller.getRouteById);
 module.exports = router;
