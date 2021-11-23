@@ -8,7 +8,7 @@ module.exports.login = async function (req, res){
     if(candidate){
         //нашли - проверяем пароль
      
-        const passwordResult = bcrypt.compareSync(req.body.login, candidate."_id.login");
+        const passwordResult = bcrypt.compareSync(req.body.login, candidate._id.login);
         if(passwordResult){
             //гененируем токен, т.к. пароль правильный
             //const token = jsonwebtoken.sign({
@@ -21,7 +21,7 @@ module.exports.login = async function (req, res){
         }else{
             //пароли не совпали
             res.status(401).json({
-                message: "Неверный пароль. Попробуйте снова."
+                message: candidate
             })
         }
     } else{
