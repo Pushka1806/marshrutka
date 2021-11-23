@@ -17,7 +17,7 @@ module.exports.login = async function (req, res){
             res.status(200).json({
                 message: "OK"
                 })
-       else{
+        }else{
             //пароли не совпали
             res.status(401).json({
                 message: "Неверный пароль. Попробуйте снова."
