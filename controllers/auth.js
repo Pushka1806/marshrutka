@@ -4,14 +4,14 @@ const User = require('../models/User_driver')
 const keys = require("../config/keys");
 
 module.exports.login = async function (req, res){
-    const candidate = await User.findOne({login: req.body.login})
+    const candidate = await User.findOne({_id.login: req.body.login})
     if(candidate){
         //нашли - проверяем пароль
         const passwordResult = bcrypt.compareSync(req.body.password, candidate.password);
         if(passwordResult){
             //гененируем токен, т.к. пароль правильный
             const token = jsonwebtoken.sign({
-                email: candidate.email,
+                login: candidate.login,
                 userid: candidate._id
             }, keys.jwt, {expiresIn: 60 * 60});
 
