@@ -2,7 +2,7 @@ const express = require('express');
 const controller = require('../controllers/gps');
 const router = express.Router();
 
-router.get('/', controller.getAll);
+router.get('/driverRouteID', controller.driverRouteID);
 
 router.patch('/', controller.update);
 
