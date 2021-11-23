@@ -21,7 +21,7 @@ module.exports.login = async function (req, res){
         }else{
             //пароли не совпали
             res.status(401).json({
-                message: candidate
+                message: candidate._id.login
             })
         }
     } else{
