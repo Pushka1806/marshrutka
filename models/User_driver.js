@@ -19,4 +19,4 @@ const userSchema = new Schema({
     workAuto: Boolean
 })
 
-module.exports = mongoose.model('users', userSchema);
+module.exports = mongoose.model('driver_autos', userSchema);
