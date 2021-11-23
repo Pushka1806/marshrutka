@@ -14,6 +14,6 @@ module.exports.driverRouteID = async function (req, res){
     }
     //console.log(sortedDrivers);
     const sortedRoute_res = {names: sortedRoute}
-    res.status(200).json({message:"OK"});
+    res.status(200).json(sortedRoute);
 }
    
