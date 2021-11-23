@@ -4,6 +4,4 @@ const router = express.Router();
 
 router.get('/driverRouteID', controller.driverRouteID);
 
-router.patch('/', controller.update);
-
 module.exports = router;
