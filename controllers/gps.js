@@ -5,7 +5,7 @@ module.exports.driverRouteID = async function (req, res){
     const getZakaz = await Passenger.find();
     let sortedRoute = new Array();
     for(const zakaz of getZakaz){
-        for (let i = 0;;i++) {
+        for (let i = 0;zakaz.routeID.length;i++) {
             if(zakaz.routeID.i === req.query.routeID) {
                sortedRoute.push(zakaz._id);   
             }
