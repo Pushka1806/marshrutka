@@ -7,30 +7,26 @@ module.exports.login = async function (req, res){
     const candidate = await User.findOne({"_id.login": req.body.login})
     if(candidate){
         //нашли - проверяем пароль
-        //const passwordResult = bcrypt.compareSync(req.body.password, candidate.password);
-        //if(passwordResult){
+        const passwordResult = bcrypt.compareSync(req.body.password, candidate._id.password);
+        if(passwordResult){
             //гененируем токен, т.к. пароль правильный
             //const token = jsonwebtoken.sign({
             //    login: candidate.login,
             //    userid: candidate._id
-            //}, keys.jwt, {expiresIn: 60 * 60});
-
-            //res.status(200).json({
-            //    token: `Bearer ${token}`
-            //})
-         res.status(200).json({
-             message: "OK"
-           })
-//         else{
-//             //пароли не совпали
-//             res.status(401).json({
-//                 message: "Неверный пароль. Попробуйте снова."
-//             })
-//         }
+            //}, keys.jwt, {expiresIn: 60 * 60})
+            res.status(200).json({
+                message: "OK"
+                })
+       else{
+            //пароли не совпали
+            res.status(401).json({
+                message: "Неверный пароль. Попробуйте снова."
+            })
+        }
     } else{
         //если не нашли пользователя
         res.status(404).json({
-            message: "Invalid"
+            message: "No"
         })
     }
 }
