@@ -77,3 +77,8 @@ module.exports.disableOrder = async function(req, res){
         console.log(e);
     }
 }
+
+module.exports.getallOrderByStop = async function (req, res){
+    const requests_on_request = await User.find({routeID: req.body.routeID});
+    res.status(200).json(requests_on_request)
+}
