@@ -9,8 +9,8 @@ module.exports.AvailableZakaz = async function (req, res){
         for (const route  of zakaz.routeID) {
             let startstop = new Array();
             if(route === req.query.routeID) {
-               startstop.push(zakaz.start);
-               startstop.push(zakaz.stop);
+               startstop.push({start:zakaz.start});
+               startstop.push({stop:zakaz.stop});
                sortedRoute.push(startstop);
       
             }
@@ -19,6 +19,6 @@ module.exports.AvailableZakaz = async function (req, res){
     }
     //console.log(sortedDrivers);
     const sortedRoute_res = {stops: sortedRoute}
-    res.status(200).json(sortedRoute);
+    res.status(200).json(sortedRoute_res);
 }
    
