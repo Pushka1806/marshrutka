@@ -2,6 +2,6 @@ const express = require('express');
 const controller = require('../controllers/gps');
 const router = express.Router();
 
-router.get('/driverRouteID', controller.driverRouteID);
+router.get('/AvailableZakaz', controller.AvailableZakaz);
 
 module.exports = router;
