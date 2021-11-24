@@ -24,16 +24,22 @@ module.exports.login = async function (req, res){
                 })
             }
             else if(candidate.flag == 1){
-                if(candidate._id.password != req.body.password)
+                if(candidate._id.password != req.body.password){
                     candidate.flag = 2;
                     candidate.save();
                     res.status(200).json({
                     message: "Пароль изменён"
                       })
+                }
+                else{
+                    res.status(401).json({
+                        message: "Введите новый пароль"
+                     })
+                }
             }
             else{    
                 res.status(200).json({
-                    message: candidate
+                    message: "OK"
                 })
             }
         }
