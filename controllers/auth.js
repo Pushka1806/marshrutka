@@ -46,13 +46,13 @@ module.exports.login = async function (req, res){
         }
         else{
             //пароли не совпали
-            res.status(401).json({
+            res.status(201).json({
                 message: "Неверный пароль"
             })
         }
     } else{
         //если не нашли пользователя
-        res.status(401).json({
+        res.status(201).json({
             message: "Пользователь не найден"
         })
     }
@@ -65,7 +65,7 @@ module.exports.register = async function (req, res){
 
     if(candidate){
         //если нашли уже сущ. пользователя - вернем ошибку
-        res.status(409).json({
+        res.status(201).json({
             message: 'Пользователь с таким email уже зарегестрирован.'
         })
     } else{
@@ -92,7 +92,7 @@ module.exports.getInfo = async function (req, res){
         res.status(200).json(candidate);
     }
     else{
-        res.status(401).json("Водитель не найден");
+        res.status(201).json("Водитель не найден");
     }
         
 }
