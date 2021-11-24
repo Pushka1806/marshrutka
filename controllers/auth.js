@@ -34,7 +34,7 @@ module.exports.login = async function (req, res){
                 }
                 else{
                     res.status(401).json({
-                        message: "Введите новый пароль"
+                        message: "Это старый пароль"
                      })
                 }
             }
