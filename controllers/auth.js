@@ -29,8 +29,7 @@ module.exports.login = async function (req, res){
                     candidate._id.password = req.body.password;
                     candidate.save();
                     res.status(200).json({
-                    message: "Пароль изменён"
-                      })
+                    message: "Пароль изменён"})
                 }
                 else{
                     res.status(201).json({
