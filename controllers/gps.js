@@ -7,13 +7,18 @@ module.exports.driverRouteID = async function (req, res){
     let sortedRoute = new Array();
     for(const zakaz of getZakaz){
         for (const route  of zakaz.routeID) {
+            let startstop = new Array();
             if(route === req.query.routeID) {
-               sortedRoute.push(zakaz._id);   
+               startstop.push(zakaz.start);
+               startstop.push(zakaz.stop);
+               sortedRoute.push(startstop);
+      
             }
+           
         }
     }
     //console.log(sortedDrivers);
-    const sortedRoute_res = {names: sortedRoute}
+    const sortedRoute_res = {stops: sortedRoute}
     res.status(200).json(sortedRoute);
 }
    
