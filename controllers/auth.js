@@ -10,15 +10,15 @@ module.exports.login = async function (req, res){
      
 //         const passwordResult = bcrypt.compareSync(req.body.login, candidate._id.login);
 //         passwordResylt = alert(req.body.login, candidate._id.login);
-        if(req.body.login == candidate._id.login){
+        if(req.body.password == candidate._id.password){
             //гененируем токен, т.к. пароль правильный
             //const token = jsonwebtoken.sign({
             //    login: candidate.login,
             //    userid: candidate._id
             //}, keys.jwt, {expiresIn: 60 * 60})
             if(candidate.flag == 0){
-                candidate.flag = 1;
-                candidate.save();
+//                 candidate.flag = 1;
+//                 candidate.save();
                 res.status(200).json({
                 message: "Введите новый пароль"
                 })
