@@ -18,15 +18,17 @@ module.exports.login = async function (req, res){
             //}, keys.jwt, {expiresIn: 60 * 60})
             if(candidate.flag == 0){
                 candidate.flag = 1;
+                candidate.save();
                 res.status(200).json({
                 message: "Введите новый пароль"
                 })
             }
             else if(candidate.flag == 1){
-                candidate.flag = 2;
-                res.status(200).json({
-                message: "OK"
-                })
+                if(candidate._id.password != req.body.password)
+                    candidate.flag = 2;
+                    res.status(200).json({
+                    message: "OK"
+                      })
             }
             else{    
                 res.status(200).json({
