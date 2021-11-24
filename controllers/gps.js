@@ -1,7 +1,7 @@
 const Passenger = require('../models/User_passenger');
 
 //просто получить ВСЕ остановки - правил
-module.exports.driverRouteID = async function (req, res){
+module.exports.AvailableZakaz = async function (req, res){
     const getZakaz = await Passenger.find();
    
     let sortedRoute = new Array();
