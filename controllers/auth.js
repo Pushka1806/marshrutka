@@ -33,7 +33,7 @@ module.exports.login = async function (req, res){
             }
             else{    
                 res.status(200).json({
-                    message: candidate.flag
+                    message: candidate
                 })
             }
         }
