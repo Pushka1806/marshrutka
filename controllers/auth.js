@@ -87,7 +87,7 @@ module.exports.register = async function (req, res){
     }
 }
 module.exports.getInfo = async function (req, res){
-    const candidate = await User.findOne({"_id.login": req.body.login})
+    const candidate = await User.findOne({"_id.login": req.query.login})
     if(candidate){
         res.status(200).json(candidate);
     }
