@@ -76,3 +76,12 @@ module.exports.register = async function (req, res){
 
     }
 }
+module.exports.getInfo = async function (req, res){
+    const candidate = await User.findOne({"_id.login": req.body.login})
+    if(candidate){
+        res.status(200).json(candidate);
+    }
+    else{
+        res.status(404).json("Водитель не найден");
+    }
+        
