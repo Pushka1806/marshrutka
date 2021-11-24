@@ -1,20 +1,13 @@
 [{
   "_id": {
-    "login": {
-      "type": "",
-      "required": true,
-      "unique": true
-    },
-    "password": {
-      "type": "",
-      "required": true
-    },
-    "flag": 0
+    "login": "0001 AA-1",
+    "password":"0001"
   },
+  "flag": 0,
   "routeID": [
     "2 ВамРад - Бернады",
     "2 Бернады - ВамРад"
   ],
   "quanPassengers": 0,
   "workAuto": true
-}]
+}] 
