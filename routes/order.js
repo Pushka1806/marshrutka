@@ -4,6 +4,8 @@ const router = express.Router();
 
 router.get('/', controller.getAll);
 
+router.post('/getallOrderByStop', controller.getallOrderByStop);
+
 router.post('/createOrder', controller.create);
 
 router.post('/disableOrder', controller.disableOrder);
