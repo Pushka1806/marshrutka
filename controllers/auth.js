@@ -52,7 +52,7 @@ module.exports.login = async function (req, res){
         }
     } else{
         //если не нашли пользователя
-        res.status(404).json({
+        res.status(401).json({
             message: "Пользователь не найден"
         })
     }
@@ -92,7 +92,7 @@ module.exports.getInfo = async function (req, res){
         res.status(200).json(candidate);
     }
     else{
-        res.status(404).json("Водитель не найден");
+        res.status(401).json("Водитель не найден");
     }
         
 }
