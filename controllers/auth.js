@@ -17,8 +17,8 @@ module.exports.login = async function (req, res){
             //    userid: candidate._id
             //}, keys.jwt, {expiresIn: 60 * 60})
             if(candidate.flag == 0){
-//                 candidate.flag = 1;
-//                 candidate.save();
+                 candidate.flag = 1;
+                 candidate.save();
                 res.status(200).json({
                 message: "Введите новый пароль"
                 })
