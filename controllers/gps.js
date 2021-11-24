@@ -9,8 +9,7 @@ module.exports.AvailableZakaz = async function (req, res){
         for (const route  of zakaz.routeID) {
             let startstop = new Array();
             if(route === req.query.routeID) {
-               startstop.push({start:zakaz.start});
-               startstop.push({stop:zakaz.stop});
+               startstop.push({start:zakaz.start, stop:zakaz.stop});
                sortedRoute.push(startstop);
       
             }
