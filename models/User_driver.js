@@ -10,12 +10,10 @@ const userSchema = new Schema({
         password:{
             type: String,
             required: true
-        },
-        flag:Number
-        
+        }
     },
-    routeID: String,
-    route: Array,
+    flag:Number,
+    routeID: Array,
     quanPassengers: Number,
     workAuto: Boolean
 })
