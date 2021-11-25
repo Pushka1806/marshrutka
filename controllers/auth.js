@@ -105,7 +105,7 @@ module.exports.driverGetRouteById = async function(req, res) {
     res.status(200).json(RouteArray);
 }
 module.exports.plusOne = async function (req,res){
-    const candidate = await Driver_route.findOne({"_id.login": req.query.login});
+    const candidate = await User.findOne({"_id.login": req.query.login});
     if(candidate){
        candidate.quanPassengers = candidate.quanPassengers + 1;
        candidate.save();
@@ -116,7 +116,7 @@ module.exports.plusOne = async function (req,res){
     } 
 }
 module.exports.minusOne = async function (req,res){
-    const candidate = await Driver_route.findOne({"_id.login": req.query.login});
+    const candidate = await User.findOne({"_id.login": req.query.login});
     if(candidate){
        candidate.quanPassengers = candidate.quanPassengers - 1;
        candidate.save();
