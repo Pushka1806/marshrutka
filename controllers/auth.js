@@ -108,6 +108,7 @@ module.esports.plusOne = async function (req,res){
     const candidate = await User.findOne({"_id.login": req.body.login})
     if(candidate){
        candidate.quanPassengers = candidate.quanPassengers + 1
+       candidate.save();
         res.status(200).json("Пассажир добавлен")
     }
     else{
