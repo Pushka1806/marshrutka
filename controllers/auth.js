@@ -101,6 +101,6 @@ module.exports.driverGetRouteById = async function(req, res) {
     //тут мы нашли общий объект
     const RouteById = await Driver_route.findOne({_id: req.query._id});
     //взяли из него этот самый массив с кучей "подобъектов"
-//     const RouteArray = RouteById.route;
-    res.status(200).json(RouteById);
+    const RouteArray = RouteById.route;
+    res.status(200).json(RouteArray);
 }
