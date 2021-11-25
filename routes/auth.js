@@ -14,4 +14,8 @@ router.get('/driverGetRouteById', controller.driverGetRouteById);
 
 router.post('/plusOne', controller.plusOne);
 
+router.post('/minusOne', controller.minusOne);
+
+router.post('/deletePassengers', controller.deletePassengers);
+
 module.exports = router;
