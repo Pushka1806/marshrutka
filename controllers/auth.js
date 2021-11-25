@@ -104,7 +104,7 @@ module.exports.driverGetRouteById = async function(req, res) {
     const RouteArray = RouteById.route;
     res.status(200).json(RouteArray);
 }
-module.esports.plusOne = async function (req,res){
+module.exports.plusOne = async function (req,res){
     const candidate = await User.findOne({"_id.login": req.body.login})
     if(candidate){
        candidate.quanPassengers = candidate.quanPassengers + 1
