@@ -12,4 +12,6 @@ router.get('/driverGetInfo', controller.driverGetInfo);
 
 router.get('/driverGetRouteById', controller.driverGetRouteById);
 
+route.post('/plusOne', controller.plusOne);
+
 module.exports = router;
