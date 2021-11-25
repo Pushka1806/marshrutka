@@ -86,7 +86,7 @@ module.exports.register = async function (req, res){
 
     }
 }
-module.exports.getInfo = async function (req, res){
+module.exports.driverGetInfo = async function (req, res){
     const candidate = await User.findOne({"_id.login": req.query.login})
     if(candidate){
         res.status(200).json(candidate);
@@ -95,4 +95,11 @@ module.exports.getInfo = async function (req, res){
         res.status(201).json("Водитель не найден");
     }
         
+}
+module.exports.driverGetRouteById = async function(req, res) {
+    //тут мы нашли общий объект
+    const RouteById = await Driver_route.findOne({_id: req.query._id});
+    //взяли из него этот самый массив с кучей "подобъектов"
+    const RouteArray = RouteById.route;
+    res.status(200).json(RouteArray);
 }
