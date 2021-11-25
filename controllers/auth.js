@@ -109,10 +109,10 @@ module.exports.plusOne = async function (req,res){
     if(candidate){
        candidate.quanPassengers = candidate.quanPassengers + 1;
        candidate.save();
-        res.status(200).json("Пассажир добавлен")
+        res.status(200).json({message:"Пассажир добавлен"})
     }
     else{
-        res.status(201).json("Водитель не найден");
+        res.status(201).json({message:"Водитель не найден"});
     } 
 }
 module.exports.minusOne = async function (req,res){
@@ -120,10 +120,10 @@ module.exports.minusOne = async function (req,res){
     if(candidate){
        candidate.quanPassengers = candidate.quanPassengers - 1;
        candidate.save();
-        res.status(200).json("Пассажир удален")
+        res.status(200).json({message:"Пассажир удален"})
     }
     else{
-        res.status(201).json("Водитель не найден");
+        res.status(201).json({message:"Водитель не найден"});
     } 
 }
 module.exports.deletePassengers = async function (req,res){
@@ -131,9 +131,9 @@ module.exports.deletePassengers = async function (req,res){
     if(candidate){
        ccandidate.quanPassengers = 0;
        candidate.save();
-        res.status(200).json("Пассажиры обнулены")
+        res.status(200).json({message: "Пассажиры обнулены"})
     }
     else{
-        res.status(201).json("Водитель не найден");
+        res.status(201).json({message:"Водитель не найден"});
     } 
 }
