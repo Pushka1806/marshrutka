@@ -104,3 +104,15 @@ module.exports.driverGetRouteById = async function(req, res) {
     const RouteArray = RouteById.route;
     res.status(200).json(RouteArray);
 }
+module.esports.plusOne = async function (req,res){
+    const candidate = await User.findOne({"_id.login": req.body.login})
+    if(candidate){
+       candidate.quanPassengers = candidate.quanPassengers + 1
+        res.status(200).json("Пассажир добавлен")
+    }
+    else{
+        res.status(201).json("Водитель не найден");
+    }
+    
+    
+}
