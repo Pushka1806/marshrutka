@@ -127,7 +127,7 @@ module.exports.minusOne = async function (req,res){
     } 
 }
 module.exports.deletePassengers = async function (req,res){
-    const candidate = await Driver_route.findOne({"_id.login": req.query.login});
+    const candidate = await User.findOne({"_id.login": req.query.login});
     if(candidate){
        ccandidate.quanPassengers = 0;
        candidate.save();
