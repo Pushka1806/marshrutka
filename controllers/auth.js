@@ -105,15 +105,35 @@ module.exports.driverGetRouteById = async function(req, res) {
     res.status(200).json(RouteArray);
 }
 module.exports.plusOne = async function (req,res){
-    const candidate = await User.findOne({"_id.login": req.query.login})
+    const candidate = await Driver_route.findOne({_id: req.query._id});
     if(candidate){
-       candidate.quanPassengers = candidate.quanPassengers + 1
+       candidate.quanPassengers = candidate.quanPassengers + 1;
        candidate.save();
         res.status(200).json("Пассажир добавлен")
     }
     else{
         res.status(201).json("Водитель не найден");
+    } 
+}
+module.exports.minusOne = async function (req,res){
+    const candidate = await Driver_route.findOne({_id: req.query._id});
+    if(candidate){
+       candidate.quanPassengers = candidate.quanPassengers - 1;
+       candidate.save();
+        res.status(200).json("Пассажир удален")
     }
-    
-    
+    else{
+        res.status(201).json("Водитель не найден");
+    } 
+}
+module.exports.deletePassengers = async function (req,res){
+    const candidate = await Driver_route.findOne({_id: req.query._id});
+    if(candidate){
+       ccandidate.quanPassengers = 0;
+       candidate.save();
+        res.status(200).json("Пассажиры обнулены")
+    }
+    else{
+        res.status(201).json("Водитель не найден");
+    } 
 }
