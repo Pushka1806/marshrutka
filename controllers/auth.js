@@ -105,7 +105,7 @@ module.exports.driverGetRouteById = async function(req, res) {
     res.status(200).json(RouteArray);
 }
 module.exports.plusOne = async function (req,res){
-    const candidate = await User.findOne({"_id.login": req.body.login})
+    const candidate = await User.findOne({"_id.login": req.query.login})
     if(candidate){
        candidate.quanPassengers = candidate.quanPassengers + 1
        candidate.save();
