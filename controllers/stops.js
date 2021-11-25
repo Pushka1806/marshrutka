@@ -33,9 +33,9 @@ module.exports.getRouteById = async function(req, res) {
     //взяли из него этот самый массив с кучей "подобъектов"
     const RouteArray = RouteById.route;
     //методом map достали все имена
-    const RouteNames = RouteArray.map(names => { return names.name});
-    const RouteNames_res = {names: RouteNames};
-    res.status(200).json(RouteNames_res);
+//     const RouteNames = RouteArray.map(names => { return names.name});
+//     const RouteNames_res = {names: RouteNames};
+    res.status(200).json(RouteArray);
 }
 
 //получим список походящих под выбранные остановки маршрутов - правил
