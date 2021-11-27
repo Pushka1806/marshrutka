@@ -742,7 +742,7 @@
       "longitude": 23.784868617
     }
   ],
-  "existAuto": false
+  "existAuto": true
 },{
   "_id": "18 Центральная городская больница - Центральный железнодорожный вокзал",
   "route": [
@@ -932,7 +932,7 @@
       "longitude": 23.678924305
     }
   ],
-  "existAuto": false
+  "existAuto": true
 },{
   "_id": "1 Мясокомбинат - Центральная городская больница",
   "route": [
@@ -1232,7 +1232,7 @@
       "longitude": 23.784868617
     }
   ],
-  "existAuto": false
+  "existAuto": true
 },{
   "_id": "1 Центральная городская больница - Мясокомбинат",
   "route": [
@@ -1532,7 +1532,7 @@
       "longitude": 23.644395
     }
   ],
-  "existAuto": false
+  "existAuto": true
 },{
   "_id": "5 Центральная городская больница - Новые Козловичи",
   "route": [
@@ -1742,7 +1742,7 @@
       "longitude": 23.599837142
     }
   ],
-  "existAuto": false
+  "existAuto": true
 },{
   "_id": "5 Новые Козловичи - Центральная городская больница",
   "route": [
@@ -2122,7 +2122,7 @@
       "longitude": 23.822070442
     }
   ],
-  "existAuto": false
+  "existAuto": true
 },{
   "_id": "6 Косичи - ВамРад",
   "route": [
@@ -2572,7 +2572,7 @@
       "longitude": 23.766929208
     }
   ],
-  "existAuto": false
+  "existAuto": true
 },{
   "_id": "7 Черни - мастерская - Варшавский рынок ",
   "route": [
@@ -3057,7 +3057,7 @@
       "longitude": 23.648303296
     }
   ],
-  "existAuto": false
+  "existAuto": true
 },{
   "_id": "10 Брест-Западный - Центральный железнодорожный вокзал",
   "route": [
