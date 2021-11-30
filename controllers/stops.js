@@ -63,7 +63,7 @@ module.exports.getRoutesByStops = async function(req, res) {
         }
     }
     //console.log(sortedDrivers);
-    if(sottedDrivers.size()>0){
+    if(sortedDrivers.size()>0){
          const sortedDrivers_res = {names: sortedDrivers,message:"OK"}
          res.json(sortedDrivers_res);
     }
