@@ -9,10 +9,7 @@ module.exports.AvailableZakaz = async function (req, res){
         for (const route  of zakaz.routeID) {
             if(route === req.query.routeID) {
                sortedRoute.push({start:zakaz.start, stop:zakaz.stop});
-               
-      
             }
-           
         }
     }
     //console.log(sortedDrivers);
@@ -20,7 +17,7 @@ module.exports.AvailableZakaz = async function (req, res){
     res.status(200).json(sortedRoute);
 }
 
-module.exports.getRoutesByStops = async function(req, res) {
+module.exports.getJpsByStops = async function(req, res) {
     //для этого сначала получим все маршруты, которые содержат в себе эти остановки
     const driver_route = await Driver_route.findOne({"_id":req.query.route});
     let step_one = new Array;
@@ -29,8 +26,8 @@ module.exports.getRoutesByStops = async function(req, res) {
     for (let i = 0;driver_route.length>i;i++) {
         if(driver_route.route[i].name === req.query.start) {
             findStart = true;
-            step_one.push(driver_route.latitude)
-            step_one.push(driver_route.longitude)
+            step_one.push(driver_route.route[i].latitude)
+            step_one.push(driver_route.route[i].longitude)
             continue;
         }
         if(driver_route.route[i].name === req.query.stop) {
