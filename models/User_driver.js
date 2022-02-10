@@ -12,8 +12,19 @@ const userSchema = new Schema({
             required: true
         }
     },
+    gps:{
+        latitude:{
+            type: Number,
+            required: true
+        },
+        longitude:{
+             type:Number,
+            required:true
+        } 
+    },
     flag:Number,
     routeID: Array,
+    route_work:String,
     quanPassengers: Number,
     workAuto: Boolean
 })
