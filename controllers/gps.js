@@ -24,14 +24,16 @@ module.exports.getJpsByStops = async function(req, res) {
     let step_two = new Array;
     let findStart = false, findStop = false;
     for (let i = 0;driver_route.length>i;i++) {
-        if(driver_route.route[i].name === req.query.start) {
+        if(driver_route.route[i].name === req.query.step_one) {
             findStart = true;
             step_one.push(driver_route.route[i].latitude)
             step_one.push(driver_route.route[i].longitude)
             continue;
         }
-        if(driver_route.route[i].name === req.query.stop) {
+        if(driver_route.route[i].name === req.query.step_two) {
             findStop = true;
+            step_two.push(driver_route.route[i].latitude)
+            step_two.push(driver_route.route[i].longitude)
             break;
         }
     }
