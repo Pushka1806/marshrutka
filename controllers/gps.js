@@ -23,7 +23,7 @@ module.exports.getJpsByStops = async function(req, res) {
     const driver_route = await Driver_route.findOne({"_id":req.query.route});
     let step_one = new Array;
     let step_two = new Array;
-    concole.log(driver_route.length);
+    let size = driver_route.lenght;
     let findStart = false, findStop = false;
     for (let i = 0;driver_route.length>i;i++) {
         if(driver_route.route[i].name === req.query.step_one) {
@@ -44,7 +44,7 @@ module.exports.getJpsByStops = async function(req, res) {
          res.status(200).json(result);
     }
     else{
-        const result = {step_one:{},step_two:{}, message:"NO"}
+        const result = {step_one:size,step_two:{}, message:"NO"}
         res.json(result);
     }
 }
