@@ -3,11 +3,16 @@
     "login": "0001 AA-1",
     "password":"0001"
   },
+  "gps":{
+    "latitude": 52.01,
+    "longitude": 49.08
+  },
   "flag": 0,
   "routeID": [
     "2 ВамРад - Бернады",
     "2 Бернады - ВамРад"
   ],
+  "route_work":"2 ВамРад - Бернады"
   "quanPassengers": 0,
   "workAuto": true
 }] 
