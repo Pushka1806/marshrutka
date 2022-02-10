@@ -25,7 +25,7 @@ module.exports.getJpsByStops = async function(req, res) {
     let step_two = new Array;
     let size = driver_route.lenght;
     let findStart = false, findStop = false;
-    for (let i = 0;driver_route.length>i;i++) {
+    for (let i = 0;driver_route.route.length>i;i++) {
         if(driver_route.route[i].name === req.query.step_one) {
             findStart = true;
             step_one.push(driver_route.route[i].latitude)
