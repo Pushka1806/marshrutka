@@ -1,4 +1,5 @@
 const Passenger = require('../models/User_passenger');
+const Driver_route = require('../models/Driver_routes');
 
 //просто получить ВСЕ остановки - правил
 module.exports.AvailableZakaz = async function (req, res){
@@ -39,7 +40,7 @@ module.exports.getJpsByStops = async function(req, res) {
     }
     if(findStart && findStop){
          const result= {step_one:step_one,step_two:step_two,message:"OK"}
-         res.json(result);
+         res.status(200).json(result);
     }
     else{
         const result = {step_one:{},step_two:{}, message:"NO"}
