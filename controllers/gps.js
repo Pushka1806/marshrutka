@@ -44,7 +44,7 @@ module.exports.getJpsByStops = async function(req, res) {
          res.status(200).json(result);
     }
     else{
-        const result = {step_one:size,step_two:{}, message:"NO"}
+        const result = {step_one:"2",step_two:{}, message:"NO"}
         res.json(result);
     }
 }
