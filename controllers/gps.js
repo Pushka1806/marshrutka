@@ -51,19 +51,45 @@ module.exports.getJpsByStops = async function(req, res) {
 }
 
 module.exports.getGpsDriver = async function(req, res) {
-     const routes = req.query.routes;
-     res.status(200).json(routes);
-//     const drivers = await Driver.find({"route_work":req.query.route})
-//     let gps_drivers = new Array();
-//     for(const driver of drivers){
-//         let gps_driver = new Array();
-//         gps_driver.push(driver.gps.latitude);
-//         gps_driver.push(driver.gps.longitude);
-//         gps_drivers.push(gps_driver);
-//     }
-//     let result = {drivers:gps_drivers};
-//     res.status(200).json(result);
-    
-    
+    const routes = req.query.routes;
+    let ok_cars = new Array();
+    for( let route of routes){
+        let cars_route = await Driver.find({route_work:route}); // получили водителей работающих на этом маршруте
+        let okDriverByRoute = new Array();
+        for(let car of cars_route){
+            if(check_gps(car,route,req.query.start)){ // проверяем, приедет ли водитель на нашу остановку
+                let lat = car.gps.latitude;
+                let lon = car.gps.longitude;
+                let car_result = { id: car._id,
+                                  latitude:lat,
+                                  longitude:lon};
+                okDriverByRoute.push(car_result);
+        }
+        let result = {route: route, cars: okDriverByRoute};
+        ok_cars.push(result); // отправляем машины в массив, по текущему маршруту
+    }
+    res.status(200).json(ok_cars.push);
+
+function check_gps(driver,route,start){
+    const driver_route = await Driver_route.findOne({_id:id});
+    let index=0;
+    let index_start = -1;
+    let index_driver = -1;
+    for( stop of driver_route.route){
+        
+        if(stop.name === driver.route_work){
+            index_driver = index;
+        }
+        if(stop.name === start){
+            index_start = index;
+             if(index_driver>=0 && index_start>=index_driver) {//индекс остановки должен быть больше текущей остановки
+                    return 1;
+             }
+             else{
+                return 0;
+             }   
+        }
+        index+=1;
+    } // можно реализовать приезд водителя
 }
    
