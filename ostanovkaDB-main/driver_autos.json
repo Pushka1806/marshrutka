@@ -73,7 +73,7 @@
   "_id": {
     "login": "9002 AA-1",
     "password": "9002"
-  }
+  },
   "gps": {
     "latitude": 13.01,
     "longitude": 15.08
@@ -90,7 +90,7 @@
   "_id": {
     "login": "9003 AA-1",
     "password": "9003"
-  }
+  },
   "gps": {
     "latitude": 3.01,
     "longitude": 5.08
@@ -107,7 +107,7 @@
   "_id": {
     "login": "6001 AA-1",
     "password": "6001"
-  }
+  },
   "gps": {
     "latitude": 23.01,
     "longitude": 25.08
@@ -124,7 +124,7 @@
   "_id": {
     "login": "6002 AA-1",
     "password": "6002"
-  }
+  },
   "gps": {
     "latitude": 23.01,
     "longitude": 25.08
@@ -141,7 +141,7 @@
   "_id": {
     "login": "6003 AA-1",
     "password": "6003"
-  }
+  },
   "gps": {
     "latitude": 93.01,
     "longitude": 95.08
