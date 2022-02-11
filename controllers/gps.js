@@ -51,16 +51,18 @@ module.exports.getJpsByStops = async function(req, res) {
 }
 
 module.exports.getGpsDriver = async function(req, res) {
-    const drivers = await Driver.find({"route_work":req.query.route})
-    let gps_drivers = new Array();
-    for(const driver of drivers){
-        let gps_driver = new Array();
-        gps_driver.push(driver.gps.latitude);
-        gps_driver.push(driver.gps.longitude);
-        gps_drivers.push(gps_driver);
-    }
-    let result = {drivers:gps_drivers};
-    res.status(200).json(result);
+     const routes = req.query.routes;
+     res.status(200).json(routes);
+//     const drivers = await Driver.find({"route_work":req.query.route})
+//     let gps_drivers = new Array();
+//     for(const driver of drivers){
+//         let gps_driver = new Array();
+//         gps_driver.push(driver.gps.latitude);
+//         gps_driver.push(driver.gps.longitude);
+//         gps_drivers.push(gps_driver);
+//     }
+//     let result = {drivers:gps_drivers};
+//     res.status(200).json(result);
     
     
 }
