@@ -31,7 +31,7 @@
     "2 Бернады - ВамРад"
   ],
   "route_work": "2 ВамРад - Бернады",
-  'current_stop": "Торговый центр Восток",
+  "current_stop": "Торговый центр Восток",
   "quanPassengers": 0,
   "workAuto": true
 },{
