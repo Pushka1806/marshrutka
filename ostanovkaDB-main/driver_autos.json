@@ -86,7 +86,7 @@
   "current_stop": "Торговый центр Восток",
   "quanPassengers": 0,
   "workAuto": true
-   },{
+  },{
   "_id": {
     "login": "9003 AA-1",
     "password": "9003"
@@ -103,7 +103,7 @@
   "current_stop": "Богданчука",
   "quanPassengers": 0,
   "workAuto": true
-   },{
+  },{
   "_id": {
     "login": "6001 AA-1",
     "password": "6001"
