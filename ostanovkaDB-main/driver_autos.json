@@ -15,7 +15,7 @@
   "route_work":"2 ВамРад - Бернады"
   "quanPassengers": 0,
   "workAuto": true
-},
+ },
  {
   "_id": {
     "login": "0002 AA-1",
@@ -30,8 +30,8 @@
     "2 ВамРад - Бернады",
     "2 Бернады - ВамРад"
   ],
-  "route_work":"2 ВамРад - Бернады"
+  "route_work":"2 ВамРад - Бернады",
   "quanPassengers": 0,
   "workAuto": true
-}
+ }
 ] 
