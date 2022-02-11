@@ -25,6 +25,7 @@ const userSchema = new Schema({
     flag:Number,
     routeID: Array,
     route_work:String,
+    current_stop:String,
     quanPassengers: Number,
     workAuto: Boolean
 })
