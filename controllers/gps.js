@@ -1,4 +1,5 @@
 const Passenger = require('../models/User_passenger');
+const Driver = require('../models/User_driver')
 const Driver_route = require('../models/Driver_routes');
 
 //просто получить ВСЕ остановки - правил
@@ -47,5 +48,20 @@ module.exports.getJpsByStops = async function(req, res) {
         const result = {step_one:size,step_two:{}, message:"NO"}
         res.json(result);
     }
+}
+
+module.exports.getGpsDriver = async function(req, res) {
+    const drivers = await Driver.find({"route_work":req.query.route})
+    let gps_drivers = new Array();
+    for(const driver of drivers){
+        let gps_driver = new Array();
+        gps_driver.push(driver.gps.latitude);
+        gps_driver.push(driver.gps.longitude);
+        gps_drivers.push(gps_driver);
+    }
+    let result = {drivers:gps_drivers};
+    res.status(200).json(result);
+    
+    
 }
    
