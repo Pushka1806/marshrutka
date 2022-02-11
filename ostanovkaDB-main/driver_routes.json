@@ -2307,7 +2307,7 @@
       "longitude": 23.771647117
     }
   ],
-  "existAuto": false
+  "existAuto": true
 },{
   "_id": "7 Варшавский рынок - Черни - мастерская",
   "route": [
@@ -7247,7 +7247,7 @@
       "longitude": 23.775297259
     }
   ],
-  "existAuto": false
+  "existAuto": true
 },{
   "_id": "9 Ленинградская - Мясокомбинат",
   "route": [
@@ -7417,5 +7417,5 @@
       "longitude": 23.644396
     }
   ],
-  "existAuto": false
+  "existAuto": true
 }]
