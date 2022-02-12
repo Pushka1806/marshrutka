@@ -98,6 +98,6 @@ function check_gps(driver,dr_route,start){
         }
         index+=1;
     } 
-    return 3;// можно реализовать приезд водителя
+    // можно реализовать приезд водителя
 }
    
