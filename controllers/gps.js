@@ -59,15 +59,16 @@ module.exports.getGpsDriver = async function(req, res) {
         let okDriverByRoute = new Array();
         
         for(let car of cars_route){
-            res.status(200).json(check_gps(car,driver_route,req.query.start));
-//             if(check_gps(car,driver_route,req.query.start)){ // проверяем, приедет ли водитель на нашу остановку или уже проехал
-//                 let lat = car.gps.latitude;
-//                 let lon = car.gps.longitude;
-//                 let car_result = { id: car._id,
-//                                   latitude:lat,
-//                                   longitude:lon};
-//                 okDriverByRoute.push(car_result);
-//             }
+            //res.status(200).json(check_gps(car,driver_route,req.query.start));
+             if(check_gps(car,driver_route,req.query.start)){ // проверяем, приедет ли водитель на нашу остановку или уже проехал
+                 let lat = car.gps.latitude;
+                 let lon = car.gps.longitude;
+                 let car_result = { id: car._id,
+                                   latitude:lat,
+                                   longitude:lon};
+                 res.json({r:car_result},{l:lat});
+                 okDriverByRoute.push(car_result);
+             }
         }
         let result = {route: route, cars: okDriverByRoute};
         ok_cars.push(result); // отправляем машины в массив, по текущему маршруту
