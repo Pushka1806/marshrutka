@@ -93,7 +93,7 @@ function check_gps(driver,dr_route,start){
                     return 1;
              }
              else{
-                return 2;
+                return 0;
              }   
         }
         index+=1;
