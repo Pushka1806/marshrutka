@@ -51,27 +51,25 @@ module.exports.getJpsByStops = async function(req, res) {
 }
 
 module.exports.getGpsDriver = async function(req, res) {
-    const routes = req.query.routes;
     let ok_cars = new Array();
-    for( let route of routes){
+    for( let route of  req.query.routes){
         let cars_route = await Driver.find({route_work:route}); // получили водителей работающих на этом маршруте
-        res.json(cars_route);
-//         let okDriverByRoute = new Array();
-//         for(let car of cars_route){
-//             const driver_route = await Driver_route.findOne({_id:car._id})
-//             if(check_gps(car,driver_route,req.query.start)){ // проверяем, приедет ли водитель на нашу остановку
-//                 let lat = car.gps.latitude;
-//                 let lon = car.gps.longitude;
-//                 let car_result = { id: car._id,
-//                                   latitude:lat,
-//                                   longitude:lon};
-//                 okDriverByRoute.push(car_result);
-//             }
-//         }
-//         let result = {route: route, cars: okDriverByRoute};
-//         ok_cars.push(result); // отправляем машины в массив, по текущему маршруту
+        const driver_route = await Driver_route.findOne({_id:car.route_work}); // получили остановки маршрута
+        let okDriverByRoute = new Array();
+        for(let car of cars_route){
+            if(check_gps(car,driver_route,req.query.start)){ // проверяем, приедет ли водитель на нашу остановку
+                let lat = car.gps.latitude;
+                let lon = car.gps.longitude;
+                let car_result = { id: car._id,
+                                  latitude:lat,
+                                  longitude:lon};
+                okDriverByRoute.push(car_result);
+            }
+        }
+        let result = {route: route, cars: okDriverByRoute};
+        ok_cars.push(result); // отправляем машины в массив, по текущему маршруту
      }
-//     res.status(200).json(ok_cars.push);
+     res.status(200).json(ok_cars.push);
 }
 function check_gps(driver,dr_route,start){
     const driver_route = dr_route;
