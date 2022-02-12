@@ -66,7 +66,7 @@ module.exports.getGpsDriver = async function(req, res) {
                  let car_result = { id: car._id,
                                    latitude:lat,
                                    longitude:lon};
-                 res.json({r:car_result},{l:lat});
+                 res.json({r:car_result,l:lat});
                  okDriverByRoute.push(car_result);
              }
         }
