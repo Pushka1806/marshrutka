@@ -52,6 +52,7 @@ module.exports.getJpsByStops = async function(req, res) {
 
 module.exports.getGpsDriver = async function(req, res) {
     const routes = req.query.routes;
+    res.json(routes);
     let ok_cars = new Array();
     for( let route of routes){
         let cars_route = await Driver.find({route_work:route}); // получили водителей работающих на этом маршруте
