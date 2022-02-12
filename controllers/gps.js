@@ -55,11 +55,11 @@ module.exports.getGpsDriver = async function(req, res) {
     for( let route of  req.query.routes){
        
         let cars_route = await Driver.find({route_work:route}); // получили водителей работающих на этом маршруте
-        res.status(200).json(cars_route);       
-        const driver_route = await Driver_route.findOne({_id:car.route_work}); // получили остановки маршрута
+        const driver_route = await Driver_route.findOne({_id:route}); // получили остановки маршрута
         let okDriverByRoute = new Array();
-        res.status(200).json(cars_route);
+        
         for(let car of cars_route){
+            res.status(200).json(car);
             if(check_gps(car,driver_route,req.query.start)){ // проверяем, приедет ли водитель на нашу остановку
                 let lat = car.gps.latitude;
                 let lon = car.gps.longitude;
