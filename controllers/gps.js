@@ -66,10 +66,12 @@ module.exports.getGpsDriver = async function(req, res) {
                  let car_result = { id: car._id,
                                    latitude:lat,
                                    longitude:lon};
-                 res.status(200).json(car_result);
+                 
                  okDriverByRoute.push(car_result);
+                 res.status(200).json({r:okDriverByRoute});
              }
         }
+        res.status(200).json(car_result);
         let result = {route: route, cars: okDriverByRoute};
         ok_cars.push(result); // отправляем машины в массив, по текущему маршруту
      }
