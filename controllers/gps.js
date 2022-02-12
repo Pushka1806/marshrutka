@@ -68,14 +68,14 @@ module.exports.getGpsDriver = async function(req, res) {
                                    longitude:lon};
                  
                  okDriverByRoute.push(car_result);
-                 res.status(200).json({r:okDriverByRoute});
+                 //res.status(200).json({r:okDriverByRoute});
              }
         }
-        res.status(200).json(car_result);
+       // res.status(200).json();
         let result = {route: route, cars: okDriverByRoute};
         ok_cars.push(result); // отправляем машины в массив, по текущему маршруту
      }
-     res.status(200).json(ok_cars.push);
+     res.status(200).json(ok_cars);
 }
 function check_gps(driver,dr_route,start){
     const driver_route = dr_route;
