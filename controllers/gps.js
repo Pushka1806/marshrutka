@@ -81,7 +81,7 @@ function check_gps(driver,dr_route,start){
     let index_driver = -1;
     for( stop of driver_route.route){
         
-        if(stop.name === driver.route_work){
+        if(stop.name === driver.current_stop){
             index_driver = index;
         }
         if(stop.name === start){
