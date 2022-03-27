@@ -137,3 +137,26 @@ module.exports.deletePassengers = async function (req,res){
         res.status(201).json({message:"Водитель не найден"});
     } 
 }
+
+// все что выше больно трогать
+
+module.exports.getWorkAuto = async function (req, res){      // функция для изменения флага в записи водителя
+    const driver = await User.findOne({"_id.login": req.body.login})        // проверяю наличие записи
+    if (driver === null){
+        res.status(404).json({
+            "message": "Запись не найдена",
+        })
+    } else{
+        try{
+            await User.findOneAndUpdate({"_id.login": req.body.login}, { $set: {"flag": req.body.flag}})        // нахожу, изменяю
+            res.status(201).json({
+                "message": "Флаг изменен",
+            })
+        } catch (e){       // если сохранить всё же не удалось, вернём сообщение с ошибкой) мдя...
+            res.status(501).json({
+                "message": "Ошибка сервера",
+            })
+            console.log(e)
+        }
+    }
+}

@@ -18,4 +18,6 @@ router.post('/minusOne', controller.minusOne);
 
 router.post('/deletePassengers', controller.deletePassengers);
 
+router.patch('/getWorkAuto', controller.getWorkAuto);
+
 module.exports = router;
