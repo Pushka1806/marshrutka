@@ -31,6 +31,7 @@ module.exports.create = async function (req, res){      // функция для
         })
     } catch (e) {       // если сохранить всё же не удалось, вернём сообщение с ошибкой) мдя...
         res.status(501).json({
+            "_id":"0",
             "message": "Ошибка обработки заявки. Попробуйте снова"
         })
         console.log(e)
