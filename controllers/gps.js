@@ -14,8 +14,6 @@ module.exports.AvailableZakaz = async function (req, res){
             }
         }
     }
-    //console.log(sortedDrivers);
-   // const sortedRouteRoute = {stops: sortedRoute}
     res.status(200).json(sortedRoute);
 }
 
